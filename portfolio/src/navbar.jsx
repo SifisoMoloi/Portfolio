@@ -9,7 +9,6 @@ export function Navbar() {
   return (
     <header className="site-header">
       <a className="brand" href="#home">
-        Tshepo Sifiso Moloi
       </a>
 
       <nav className="site-nav" aria-label="Primary">

@@ -1,47 +1,55 @@
 import './App.css'
 import { Navbar } from './navbar.jsx'
-import heroImage from './assets/Sifiso.jpg'
+import heroImage from './assets/Sifiso-cutout.png'
 
 const stackItems = [
   {
     name: 'HTML',
     category: 'Markup',
     detail: 'Semantic foundations for well-structured and accessible interfaces.',
+    logo: 'https://cdn.simpleicons.org/html5/E34F26',
   },
   {
     name: 'CSS',
     category: 'Design System',
     detail: 'Responsive layouts, visual hierarchy, and polished presentation.',
+    logo: 'https://cdn.simpleicons.org/css/1572B6',
   },
   {
     name: 'JavaScript',
     category: 'Interaction',
     detail: 'Dynamic logic that turns static layouts into useful experiences.',
+    logo: 'https://cdn.simpleicons.org/javascript/F7DF1E',
   },
   {
     name: 'Angular',
     category: 'Frontend Framework',
     detail: 'Component-driven apps with scalable structure and strong organization.',
+    logo: 'https://cdn.simpleicons.org/angular/DD0031',
   },
   {
     name: 'Spring Boot',
     category: 'Backend Framework',
     detail: 'Reliable APIs and backend architecture for real application workflows.',
+    logo: 'https://cdn.simpleicons.org/springboot/6DB33F',
   },
   {
     name: 'SQL',
     category: 'Query Language',
     detail: 'Structured queries for filtering, joining, and managing application data.',
+    monogram: 'SQL',
   },
   {
     name: 'PostgreSQL',
     category: 'Database',
     detail: 'Relational data modeling with performance and reliability in mind.',
+    logo: 'https://cdn.simpleicons.org/postgresql/4169E1',
   },
   {
     name: 'GitHub',
     category: 'Collaboration',
     detail: 'Version control, teamwork, and clean project delivery across development.',
+    logo: 'https://cdn.simpleicons.org/github/FFFFFF',
   },
 ]
 
@@ -50,6 +58,21 @@ const strengths = [
   'Building scalable frontend apps',
   'Creating backend APIs and services',
   'Managing relational databases',
+]
+
+const heroStats = [
+  {
+    value: 'Frontend',
+    label: 'Responsive interfaces with clean visual hierarchy and strong usability.',
+  },
+  {
+    value: 'Backend',
+    label: 'Structured services and APIs designed for reliable application workflows.',
+  },
+  {
+    value: 'Data',
+    label: 'SQL-driven systems with dependable modeling and clear information flow.',
+  },
 ]
 
 const systemBlocks = [
@@ -76,23 +99,37 @@ function App() {
         <section className="hero-layout" id="home">
           <div className="hero-main">
             <p className="section-kicker">Portfolio / Full Stack</p>
+            <div className="hero-intro-band">
+              <span className="status-dot" aria-hidden="true" />
+              Available for professional opportunities
+            </div>
             <h1>
-              Building software that connects thoughtful interfaces to powerful systems.
+              Full-stack developer building polished interfaces, dependable APIs, and
+              data-backed application workflows.
             </h1>
             <p className="hero-summary">
-              I use a practical stack across frontend, backend, databases, and
-              collaboration workflows. This portfolio highlights the tools I work with
-              to build modern applications that feel sharp on the surface and reliable
-              underneath.
+              I focus on creating software that feels clear to use, maintainable to
+              build on, and reliable across every layer. My work brings together
+              thoughtful frontend design, structured backend logic, and strong database
+              foundations.
             </p>
 
             <div className="hero-actions">
               <a href="#stack" className="primary-action">
                 Explore Stack
               </a>
-              <a href="#systems" className="secondary-action">
-                View Workflow
+              <a href="mailto:tsheposifisomoloi@gmail.com" className="secondary-action">
+                Contact Me
               </a>
+            </div>
+
+            <div className="hero-stat-grid">
+              {heroStats.map((stat) => (
+                <article className="hero-stat-card" key={stat.value}>
+                  <strong>{stat.value}</strong>
+                  <p>{stat.label}</p>
+                </article>
+              ))}
             </div>
           </div>
 
@@ -102,15 +139,17 @@ function App() {
                 <img src={heroImage} alt="Portrait for portfolio" className="profile-image" />
               </div>
 
-              <span className="signal-label">Core Direction</span>
-              <strong>Frontend + Backend + Data</strong>
+              <span className="signal-label">Professional Profile</span>
+              <strong>Tshepo Sifiso Moloi</strong>
+              <span className="signal-role">Full-Stack Developer</span>
               <p>
-                I enjoy building complete digital products where each layer supports the
-                next with clarity.
+                Focused on shipping modern applications with thoughtful UI, dependable
+                backend structure, and practical database design.
               </p>
             </div>
 
             <div className="strength-panel">
+              <p className="strength-heading">What I Bring</p>
               {strengths.map((strength) => (
                 <div className="strength-chip" key={strength}>
                   {strength}
@@ -122,7 +161,8 @@ function App() {
 
         <section className="statement-strip">
           <p>
-            My stack is built for complete products, not isolated pieces.
+            I build complete products where the interface, application logic, and data
+            layer all support the same outcome.
           </p>
         </section>
 
@@ -135,6 +175,15 @@ function App() {
           <div className="stack-grid">
             {stackItems.map((item) => (
               <article className="stack-card" key={item.name}>
+                <div className="stack-logo-row">
+                  {item.logo ? (
+                    <img src={item.logo} alt={`${item.name} logo`} className="stack-logo" />
+                  ) : (
+                    <span className="stack-monogram" aria-label={`${item.name} logo`}>
+                      {item.monogram}
+                    </span>
+                  )}
+                </div>
                 <p className="stack-category">{item.category}</p>
                 <h3>{item.name}</h3>
                 <p>{item.detail}</p>
@@ -171,15 +220,57 @@ function App() {
 
           <div className="closing-copy">
             <p>
-              From semantic HTML and refined CSS to JavaScript logic, Angular
-              applications, Spring Boot services, SQL queries, PostgreSQL databases,
-              and GitHub collaboration, each tool plays a clear role in how I build.
+              My approach is grounded in clean execution: clear layouts, maintainable
+              structure, dependable services, and database decisions that support real
+              product growth over time.
             </p>
           </div>
         </section>
       </main>
-      <footer>
+      <footer className="site-footer">
+        <div className="footer-top">
+          <div className="footer-brand-block">
+            <p className="section-kicker">Portfolio Footer</p>
+            <p className="footer-description">
+              Full-stack portfolio focused on clean interfaces, dependable backend
+              systems, and practical database-driven development.
+            </p>
+          </div>
 
+          <div className="footer-links-block">
+            <div>
+              <h3>Navigation</h3>
+              <a href="#home">Home</a>
+              <a href="#stack">Stack</a>
+              <a href="#systems">Workflow</a>
+              <a href="#about">About</a>
+            </div>
+
+            <div>
+              <h3>Core Stack</h3>
+              <span>Angular</span>
+              <span>Spring Boot</span>
+              <span>PostgreSQL</span>
+              <span>GitHub</span>
+            </div>
+
+            <div className="footer-contact">
+              <h3>Contact</h3>
+              <a href="mailto:tsheposifisomoloi@gmail.com" className="email-link">
+                tsheposifisomoloi@gmail.com
+              </a>
+              <a href="https://github.com/" target="_blank" rel="noreferrer">
+                GitHub Profile
+              </a>
+              <span>Open to professional opportunities</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>Built with HTML, CSS, JavaScript, and modern full-stack tools.</p>
+          <p>© 2026. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   )

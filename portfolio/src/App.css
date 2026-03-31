@@ -55,6 +55,7 @@
 
 .hero-layout,
 .stack-section,
+.projects-section,
 .systems-section,
 .closing-section {
   margin-top: 1rem;
@@ -71,6 +72,7 @@
 .signal-panel,
 .strength-panel,
 .stack-section,
+.projects-section,
 .systems-section,
 .closing-section {
   border-radius: 24px;
@@ -188,7 +190,7 @@
 
 .hero-stat-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
   margin-top: 2rem;
 }
@@ -198,6 +200,10 @@
   border-radius: 18px;
   border: 1px solid rgba(244, 245, 239, 0.08);
   background: linear-gradient(180deg, rgba(244, 245, 239, 0.06) 0%, rgba(20, 25, 18, 0.56) 100%);
+}
+
+.hero-stat-card:last-child {
+  grid-column: 1 / -1;
 }
 
 .hero-stat-card strong {
@@ -243,7 +249,7 @@
 .profile-frame {
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   width: 100%;
   aspect-ratio: 1 / 1.08;
@@ -283,12 +289,13 @@
   display: block;
   position: relative;
   z-index: 1;
-  width: min(158%, 32rem);
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  object-position: center top;
+  object-position: center center;
   filter: drop-shadow(0 30px 36px rgba(48, 29, 9, 0.24));
-  transform: translate(0, -1.6rem);
+  transform: scale(1.32) translateY(8%);
+  transform-origin: center center;
 }
 
 .signal-label {
@@ -351,6 +358,7 @@
 }
 
 .stack-section,
+.projects-section,
 .systems-section,
 .closing-section {
   padding: 1.8rem;
@@ -370,6 +378,7 @@
 }
 
 .stack-grid,
+.projects-grid,
 .system-grid {
   display: grid;
   gap: 1rem;
@@ -379,11 +388,16 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.projects-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .system-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .stack-card,
+.project-card,
 .system-card {
   min-height: 190px;
   padding: 1.25rem;
@@ -393,6 +407,7 @@
 }
 
 .stack-card:hover,
+.project-card:hover,
 .system-card:hover {
   transform: translateY(-4px);
   border-color: rgba(215, 168, 95, 0.22);
@@ -429,6 +444,8 @@
 }
 
 .stack-category,
+.project-index,
+.project-type,
 .system-index {
   display: inline-block;
   color: #d7a85f;
@@ -437,6 +454,7 @@
 }
 
 .stack-card h3,
+.project-card h3,
 .system-card h3 {
   color: #f4f5ef;
   font-size: 1.2rem;
@@ -444,9 +462,29 @@
 }
 
 .stack-card p,
+.project-card p,
 .system-card p,
 .closing-copy p {
   font-size: 0.95rem;
+}
+
+.project-card {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    radial-gradient(circle at top right, rgba(215, 168, 95, 0.1), transparent 28%),
+    linear-gradient(180deg, rgba(244, 245, 239, 0.04) 0%, rgba(16, 20, 15, 0.9) 100%);
+}
+
+.project-index {
+  margin-bottom: 0.45rem;
+}
+
+.project-type {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
 }
 
 .closing-section {
@@ -576,6 +614,7 @@
   .hero-layout,
   .hero-stat-grid,
   .stack-grid,
+  .projects-grid,
   .system-grid,
   .closing-section,
   .footer-top,
@@ -614,6 +653,7 @@
 
   .hero-main,
   .stack-section,
+  .projects-section,
   .systems-section,
   .closing-section,
   .site-footer {

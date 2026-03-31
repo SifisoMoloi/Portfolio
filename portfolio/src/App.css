@@ -43,8 +43,29 @@
   transition: color 160ms ease, opacity 160ms ease;
 }
 
-.site-nav a:hover {
+.site-nav a:hover,
+.download-cv-button {
+  color: #b8beb2;
+}
+
+.download-cv-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 0.35rem;
+  border: 1px solid #b8beb2;
+  background-color: transparent;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: transform 160ms ease, color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.download-cv-button:hover {
   color: #f4f5ef;
+  border-color: #f4f5ef;
+  background-color: rgba(244, 245, 239, 0.1);
+  transform: translateY(-1px);
 }
 
 .page-shell {

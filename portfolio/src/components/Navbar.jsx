@@ -20,6 +20,17 @@ export function Navbar() {
           </a>
         ))}
       </nav>
+
+      <div className="nav-cta">
+        <a
+          className="download-cv-button"
+          href="/cv.pdf"
+          download="Tshepo_Moloi_CV.pdf"
+          aria-label="Download CV"
+        >
+          Download CV
+        </a>
+      </div>
     </header>
   )
 }

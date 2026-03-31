@@ -18,7 +18,7 @@ const heroStats = [
   },
   {
     value: 'Education',
-    label: 'Academic training that strengthens practical development skills and long-term technical growth.',
+    label: 'Matric, Microsoft certifications, and system support qualification plus academic training that strengthen practical development skills and long-term technical growth.',
   },
 ]
 

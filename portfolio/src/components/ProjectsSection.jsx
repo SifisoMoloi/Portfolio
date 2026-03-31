@@ -21,7 +21,7 @@ const projectCards = [
     name: 'FundEase',
     type: 'Finance Platform',
     summary:
-      'A finance-oriented product concept designed to make contributions, balances, and money movement easier to understand.',
+      'A full-Stack application built to simplify students\' funding process by connecting students with sponsors in one platform.',
   },
 ]
 
